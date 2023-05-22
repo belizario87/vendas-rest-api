@@ -32,10 +32,19 @@ public class VendasappApplication {
 			p.setDataPedido(LocalDate.now());
 			p.setTotal(BigDecimal.valueOf(100));
 			pedidoRepository.save(p);
+			Pedido p2 = new Pedido();
 
-			Cliente cliente = clienteRepository.findClinteFetchPedidos(belizario.getId());
-			System.out.println(cliente);
-			System.out.println(cliente.getPedidos());
+			p2.setCliente(belizario);
+			p2.setDataPedido(LocalDate.now());
+			p2.setTotal(BigDecimal.valueOf(200));
+			pedidoRepository.save(p2);
+
+			// Cliente cliente =
+			// clienteRepository.findClinteFetchPedidos(belizario.getId());
+			// System.out.println(cliente);
+			// System.out.println(cliente.getPedidos());
+
+			pedidoRepository.findByCliente(belizario).forEach(System.out::println);
 
 		};
 	}
