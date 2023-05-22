@@ -3,7 +3,6 @@ package br.com.belizario87.vendas.vendasapp.domain.entity;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
