@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,6 +51,13 @@ public class ClienteController {
     public ResponseEntity<Cliente> salvarCliente(@RequestBody Cliente cliente) {
         Cliente clienteSalvo = clienteRepository.save(cliente);
         return ResponseEntity.created(null).body(clienteSalvo);
+    }
+
+    @DeleteMapping("/deletarcliente/{id}")
+    public ResponseEntity<Cliente> deletarCliente(@PathVariable Integer id) {
+        clienteRepository.findById(id);
+        clienteRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/atualizarcliente/{id}")
