@@ -25,6 +25,16 @@ public class Produto {
     @Column(name = "quantidade_estoque")
     private int quantidade;
 
+    public Produto() {
+    };
+
+    public Produto(int id, String descricao, double preco, int quantidade) {
+        this.id = id;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
+
     public int getId() {
         return id;
     }
