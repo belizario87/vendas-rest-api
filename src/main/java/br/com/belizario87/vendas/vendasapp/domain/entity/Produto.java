@@ -14,32 +14,32 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @Column(name = "descricao")
     private String descricao;
 
     @Column(name = "preco_unitario")
-    private double preco;
+    private Double preco;
 
-    @Column(name = "quantidade_estoque")
-    private int quantidade;
+    // @Column(name = "quantidade_estoque")
+    // private int quantidade;
 
     public Produto() {
     };
 
-    public Produto(int id, String descricao, double preco, int quantidade) {
+    public Produto(Integer id, String descricao, Double preco) {
         this.id = id;
         this.descricao = descricao;
         this.preco = preco;
-        this.quantidade = quantidade;
+        // this.quantidade = quantidade;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -51,20 +51,20 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public double getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 
-    public int getQuantidade() {
-        return quantidade;
-    }
+    // public int getQuantidade() {
+    // return quantidade;
+    // }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
+    // public void setQuantidade(int quantidade) {
+    // this.quantidade = quantidade;
+    // }
 
 }
