@@ -14,6 +14,6 @@ public interface ProdutoService {
 
     void deletarProduto(Integer id);
 
-    List<Produto> find(Produto filto);
+    List<Produto> buscarProdutos(Produto filto);
 
 }

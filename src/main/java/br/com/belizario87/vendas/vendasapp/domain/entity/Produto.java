@@ -6,7 +6,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
+@ToString
+@EqualsAndHashCode
+@RequiredArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "produto")
 public class Produto {
@@ -21,50 +31,5 @@ public class Produto {
 
     @Column(name = "preco_unitario")
     private Double preco;
-
-    // @Column(name = "quantidade_estoque")
-    // private int quantidade;
-
-    public Produto() {
-    };
-
-    public Produto(Integer id, String descricao, Double preco) {
-        this.id = id;
-        this.descricao = descricao;
-        this.preco = preco;
-        // this.quantidade = quantidade;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public Double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(Double preco) {
-        this.preco = preco;
-    }
-
-    // public int getQuantidade() {
-    // return quantidade;
-    // }
-
-    // public void setQuantidade(int quantidade) {
-    // this.quantidade = quantidade;
-    // }
 
 }

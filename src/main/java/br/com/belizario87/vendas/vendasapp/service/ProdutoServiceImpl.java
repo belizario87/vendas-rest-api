@@ -16,7 +16,7 @@ import br.com.belizario87.vendas.vendasapp.domain.repository.ProdutoRepository;
 public class ProdutoServiceImpl implements ProdutoService {
 
     @Autowired
-    private ProdutoRepository produtoRepository;
+    private final ProdutoRepository produtoRepository;
 
     public ProdutoServiceImpl(ProdutoRepository produtoRepository) {
         this.produtoRepository = produtoRepository;
@@ -44,9 +44,11 @@ public class ProdutoServiceImpl implements ProdutoService {
     public Produto atualizarProduto(Integer id, Produto produto) {
         Produto produtoAtualizado = produtoRepository.findById(id)
                 .orElseThrow(() -> new ClienteNotFoundException("Cliente nao encontrado"));
-        produtoAtualizado.setId(produto.getId());
+        produtoAtualizado.setDescricao(produto.getDescricao());
+        produtoAtualizado.setPreco(produto.getPreco());
 
-        return produtoAtualizado;
+        return produtoRepository.save(produtoAtualizado);
+
     }
 
     @Override
@@ -58,7 +60,7 @@ public class ProdutoServiceImpl implements ProdutoService {
     }
 
     @Override
-    public List<Produto> find(Produto filto) {
+    public List<Produto> buscarProdutos(Produto filto) {
         ExampleMatcher matcher = ExampleMatcher
                 .matching()
                 .withIgnoreCase()
