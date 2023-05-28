@@ -7,10 +7,10 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
-import br.com.belizario87.vendas.vendasapp.Exception.ClienteNotFoundException;
-import br.com.belizario87.vendas.vendasapp.Exception.FormatException;
 import br.com.belizario87.vendas.vendasapp.domain.entity.Produto;
 import br.com.belizario87.vendas.vendasapp.domain.repository.ProdutoRepository;
+import br.com.belizario87.vendas.vendasapp.exception.ClienteNotFoundException;
+import br.com.belizario87.vendas.vendasapp.exception.FormatException;
 
 @Service
 public class ProdutoServiceImpl implements ProdutoService {
