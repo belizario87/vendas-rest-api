@@ -10,13 +10,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import lombok.NoArgsConstructor;
 
-@ToString
-@EqualsAndHashCode
-@RequiredArgsConstructor
+@NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity

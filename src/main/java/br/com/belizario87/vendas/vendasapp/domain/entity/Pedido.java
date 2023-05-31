@@ -16,12 +16,8 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
-import lombok.ToString;
 
-@ToString
-@EqualsAndHashCode
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Data

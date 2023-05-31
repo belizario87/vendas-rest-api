@@ -3,9 +3,10 @@ package br.com.belizario87.vendas.vendasapp.service;
 import java.util.List;
 
 import br.com.belizario87.vendas.vendasapp.domain.entity.Pedido;
+import br.com.belizario87.vendas.vendasapp.rest.dto.PedidosDto;
 
 public interface PedidoService {
-    Pedido salvarPedido(Pedido produto);
+    Pedido salvarPedido(PedidosDto pedidoDto);
 
     Pedido buscarPedidoId(Integer id);
 

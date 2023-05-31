@@ -9,10 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.belizario87.vendas.vendasapp.domain.entity.Pedido;
+import br.com.belizario87.vendas.vendasapp.rest.dto.PedidosDto;
 import br.com.belizario87.vendas.vendasapp.service.PedidoService;
 
 @RestController
@@ -27,8 +27,8 @@ public class PedidoController {
     }
 
     @PostMapping("")
-    public ResponseEntity<Pedido> salvarPedido(@RequestBody Pedido pedido) {
-        Pedido pedidoSalvo = pedidoService.salvarPedido(pedido);
+    public ResponseEntity<Pedido> salvarPedido(@RequestBody PedidosDto pedidodto) {
+        Pedido pedidoSalvo = pedidoService.salvarPedido(pedidodto);
         return ResponseEntity.status(HttpStatus.CREATED).body(pedidoSalvo);
 
     }
